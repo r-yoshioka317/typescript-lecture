@@ -1,20 +1,21 @@
-import { Counter } from "./counter";
+import { Book } from "./book";
 
-const testCounter = new Counter(10);
-const testtestCounter = new Counter(10);
+// Bookクラスの動作確認用コード
+const book1 = new Book("走れメロス", "太宰治");
+const book2 = new Book("こころ", "夏目漱石");
 
-console.log(testCounter.getValue()); // 10
-console.log(testtestCounter.getValue()); // 10
+// 初期状態を確認
+console.log(book1.getStatus());
+console.log(book2.getStatus());
 
-testCounter.increment();
+// book1 を貸出
+book1.borrow();
+console.log(book1.getStatus());
 
-console.log(testCounter.getValue()); // 11
-console.log(testtestCounter.getValue()); // 10
+// もう一度貸出（変化しないことを確認）
+book1.borrow();
+console.log(book1.getStatus());
 
-testCounter.decrement();
-
-console.log(testCounter.getValue()); // 10
-
-testCounter.reset();
-
-console.log(testCounter.getValue()); // 0
+// 返却
+book1.returnBook();
+console.log(book1.getStatus());
