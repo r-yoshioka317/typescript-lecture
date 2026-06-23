@@ -2,7 +2,7 @@ import { Character } from "./character";
 
 export class Enemy extends Character {
   //TODO: maxHp プロパティを追加する
-  private maxHP: number;
+  readonly maxHP: number;
   //TODO: maxHp プロパティの初期化
   constructor(name: string, hp: number) {
     super(name, hp);
