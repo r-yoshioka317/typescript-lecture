@@ -11,5 +11,9 @@ export abstract class Character {
     console.log(`${this.name}: HP ${this.hp}`);
   }
 
+  isDead(): boolean {
+    return this.hp <= 0;
+  }
+
   abstract attack(): void;
 }
