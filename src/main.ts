@@ -5,7 +5,7 @@ import { Warrior } from "./warrior";
 
 const warrior = new Warrior("アーサー", 100, "エクスカリバー");
 warrior.showStatus();
-warrior.attack();
+warrior.attack(warrior);
 
 const mage = new Mage("メディア", 80);
 mage.showStatus();
@@ -15,7 +15,5 @@ import { Enemy } from "./enemy";
 
 const slime = new Enemy("スライム", 50);
 slime.showStatus();
-slime.attack();
+slime.attack(slime);
 slime.takeDamage(40);
-slime.showStatus();
-slime.attack();
