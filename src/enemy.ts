@@ -15,21 +15,23 @@ export class Enemy extends Character {
   }
 
   //TODO: ダメージを受ける takeDamage メソッドを追加する
-  takeDamage(damage: number): void {
-    this.hp -= damage;
-    if (this.hp < 0) {
-      this.hp = 0;
-    }
-  }
+  // takeDamage(damage: number): void {
+  //   this.hp -= damage;
+  //   if (this.hp < 0) {
+  //     this.hp = 0;
+  //   }
+  // }
 
   //TODO: 残り HP が 30% 以下の場合、行動を変化させる
   // 通常時 : name + "は攻撃してきた！"
   // 残り HP が 30% 以下 : name + "は必死に抵抗している！"
-  attack(): void {
+
+  attack(opponent: Character): void {
     if (this.getHpRatio() > 0.3) {
       console.log(`${this.name}は攻撃してきた！`);
     } else {
       console.log(`${this.name}は必死に抵抗している！`);
+      opponent.takeDamage(20);
     }
   }
 }

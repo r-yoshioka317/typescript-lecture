@@ -11,5 +11,18 @@ export abstract class Character {
     console.log(`${this.name}: HP ${this.hp}`);
   }
 
-  abstract attack(): void;
+  abstract attack(opponent: Character): void;
+
+  // ダメージを受けて hp を減らす public  メソッド takeDamage(damage: number): void を追加する
+  public takeDamage(damage: number): void {
+    this.hp -= damage;
+    if (this.hp < 0) {
+      this.hp = 0;
+    }
+  }
+
+  // hp が 0 以下かを返す isDead(): boolean を追加する
+  isDead(): boolean {
+    return this.hp <= 0;
+  }
 }
