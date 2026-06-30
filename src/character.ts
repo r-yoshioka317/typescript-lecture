@@ -15,5 +15,5 @@ export abstract class Character {
     return this.hp <= 0;
   }
 
-  abstract attack(): void;
+  abstract attack(opponent: Character): void;
 }
